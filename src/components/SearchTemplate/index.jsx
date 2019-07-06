@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // state managment
 import { connect } from "react-redux";
@@ -6,12 +6,20 @@ import { fetchSongLyrics } from "../../actions/songActions";
 
 import Searchbar from "../Searchbar";
 
-const SearchTemplate = () => {
+const SearchTemplate = props => {
+  const [songArtist, setSongArtist] = useState("");
+  const [songTitle, setSongTitle] = useState("");
+
+  // why not Redux? Because this is faster and also
+  // we need to keep the components bellow such as "Searchbar"
+  // generic
   const handleSearchChange = feedback => {
     switch (feedback.dataBound) {
       case "song-artist":
+        setSongArtist(feedback.text);
         break;
       case "song-title":
+        setSongTitle(feedback.text);
         break;
       default:
         break;
@@ -27,8 +35,6 @@ const SearchTemplate = () => {
           placeholder="Artist"
           dataBound="song-artist"
           icon="users"
-          // we are using callBack instead of Redux, because searchBar needs to
-          // be a generic component
           callBack={handleSearchChange}
         />
       </div>
@@ -39,24 +45,24 @@ const SearchTemplate = () => {
           dataBound="song-title"
           placeholder="Trackname"
           icon="music"
-          // we are using callBack instead of Redux, because searchBar needs to
-          // be a generic component
           callBack={handleSearchChange}
         />
       </div>
 
       {/* search button Here */}
       <div className="flexcontainer-block xs-12 md-6">
-        <button className="beau-button margin-bottom container-margin">
+        <button
+          className="beau-button margin-bottom container-margin"
+          onClick={() => props.fetchSongLyrics(songArtist, songTitle)}
+        >
           Search
         </button>
       </div>
     </div>
   );
 };
-const mapStateToProps = state => ({});
 
 export default connect(
-  mapStateToProps,
+  null,
   { fetchSongLyrics }
 )(SearchTemplate);

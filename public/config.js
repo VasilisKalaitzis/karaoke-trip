@@ -1,3 +1,3 @@
 var env_config = {
-    lyricsUrl: "https://api.lyrics.ovh/v1/"
+  lyricsUrl: "https://api.lyrics.ovh/v1"
 };
