@@ -17,12 +17,14 @@ const KaraokeFrame = props => {
     <div className="karaoke-container flexcontainer">
       <div className="flexcontainer-block xs-12 md-6">
         <div className="sub-app color-pallete2">
-          <div className="sub-app-content flexcontainer">
+          <div className="sub-app-content">
             <SearchTemplate />
             {/* check whether you need to display an console.error or the song lyrics or nothing */}
             {props.currentSong.error !== undefined ? (
-              <div className="flexcontainer-block xs-12 md-6">
-                <span>{props.currentSong.error}</span>
+              <div className="flexcontainer">
+                <div className="flexcontainer-block xs-12 md-6">
+                  <span>{props.currentSong.error}</span>
+                </div>
               </div>
             ) : Object.entries(props.currentSong).length !== 0 ? (
               <LyricsBox

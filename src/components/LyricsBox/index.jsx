@@ -55,25 +55,26 @@ const LyricsBox = props => {
   };
 
   return (
-    <React.Fragment>
-      <div className="flexcontainer-block xs-12 md-6 lyrics-box">
+    <div className="flexcontainer">
+      <div className="flexcontainer-block xs-12 lyrics-box">
         {/* Artist Name */}
         <span className="lyrics-box-title">{props.artist}</span>
       </div>
-
       {/* Lyrics */}
-      <div className="flexcontainer-block xs-12 md-6">
-        <span
-          className="lyrics-box-text lyrics-box-text-animation"
-          data-text={lyricsArray[lineIndex]}
-          ref={lyricsField => {
-            animatedField = lyricsField;
-          }}
-        >
-          {lyricsArray[lineIndex]}
-        </span>
+      <div className="flexcontainer-block xs-12 align-items-left">
+        <div className="lyrics-box-text-animation">
+          <span
+            className="lyrics-box-text "
+            data-text={lyricsArray[lineIndex]}
+            ref={lyricsField => {
+              animatedField = lyricsField;
+            }}
+          >
+            {lyricsArray[lineIndex]}
+          </span>
+        </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -27,7 +27,7 @@ const SearchTemplate = props => {
   };
 
   return (
-    <div>
+    <div className="flexcontainer">
       <div className="flexcontainer-block xs-12 md-6">
         {/* artist searchbar here */}
         <Searchbar
@@ -50,7 +50,7 @@ const SearchTemplate = props => {
       </div>
 
       {/* search button Here */}
-      <div className="flexcontainer-block xs-12 md-6">
+      <div className="flexcontainer-block xs-12">
         <button
           className="beau-button margin-bottom container-margin"
           onClick={() => props.fetchSongLyrics(songArtist, songTitle)}

@@ -6,7 +6,6 @@
 
 .lyrics-box-text {
   position: relative;
-  white-space: nowrap;
 }
 
 .lyrics-box-text-animation::after {
@@ -16,10 +15,10 @@
   top: 0;
   color: #36f284;
   overflow: hidden;
+  white-space: nowrap;
   width: 40%;
   -webkit-animation: run-text 3s infinite linear;
           animation: run-text 3s infinite linear;
-  text-shadow: 0 0 3px white;
 }
 
 @-webkit-keyframes run-text {
