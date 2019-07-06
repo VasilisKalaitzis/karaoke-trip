@@ -27,7 +27,7 @@ const SearchTemplate = props => {
   };
 
   return (
-    <div className="flexcontainer">
+    <div>
       <div className="flexcontainer-block xs-12 md-6">
         {/* artist searchbar here */}
         <Searchbar

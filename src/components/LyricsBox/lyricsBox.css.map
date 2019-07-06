@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACG,AAAD,iBAAO,CAAC;EACN,aAAa,EAAE,iBAAiB;EAChC,WAAW,EAAE,KAAK;CACnB;;AACA,AAAD,gBAAM,CAAC;EACL,WAAW,EAAE,KAAK;CACnB",
+    "sources": [
+        "lyricsBox.scss"
+    ],
+    "names": [],
+    "file": "lyricsBox.css"
+}

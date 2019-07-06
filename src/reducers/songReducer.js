@@ -1,4 +1,8 @@
-import { FETCH_NEW_SONG, RETRIEVE_EXISTING_SONG } from "../actions/types";
+import {
+  FETCH_NEW_SONG,
+  RETRIEVE_EXISTING_SONG,
+  FETCH_NEW_SONG_ERROR
+} from "../actions/types";
 
 const initialState = {
   songHistory: {},
@@ -28,6 +32,12 @@ export default function(state = initialState, action) {
         ...state,
         currentSong:
           state.songHistory[action.payload.artist][action.payload.title]
+      };
+    case FETCH_NEW_SONG_ERROR:
+      //   Tech Debt: bad way to handle the error
+      return {
+        ...state,
+        currentSong: { error: action.payload.error }
       };
     default:
       return state;

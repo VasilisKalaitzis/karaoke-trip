@@ -1,4 +1,8 @@
-import { FETCH_NEW_SONG, RETRIEVE_EXISTING_SONG } from "./types";
+import {
+  FETCH_NEW_SONG,
+  RETRIEVE_EXISTING_SONG,
+  FETCH_NEW_SONG_ERROR
+} from "./types";
 
 // fetch invoice by its ID
 // request: server invoice
@@ -41,6 +45,12 @@ export const fetchSongLyrics = (artist, title) => (dispatch, getState) => {
       .catch(err => {
         err.text().then(errorMessage => {
           //   display the error
+          dispatch({
+            type: FETCH_NEW_SONG_ERROR,
+            payload: {
+              error: "song lyrics couldn't be found"
+            }
+          });
         });
       });
   }
