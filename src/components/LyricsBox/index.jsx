@@ -18,6 +18,7 @@ const LyricsBox = props => {
   useEffect(() => {
     // Component Did Update
     newSongInitialize();
+    // the interval's job is to pull the next line of the lyrics
     const interval = setInterval(getNextLine, 3000);
 
     // Component Will Unmount
