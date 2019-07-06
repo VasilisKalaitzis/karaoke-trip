@@ -12,8 +12,8 @@
   position: relative;
   margin: 20px;
   border-radius: 9px;
-  -webkit-box-shadow: 0 13px 30px -19px #40514e;
-          box-shadow: 0 13px 30px -19px #40514e;
+  -webkit-box-shadow: 0 10px 35px -28px #40514e;
+          box-shadow: 0 10px 35px -28px #40514e;
   width: -moz-available;
   width: -webkit-fill-available;
 }
@@ -34,7 +34,7 @@
   width: 90%;
   height: 100px;
   opacity: 0.5;
-  background-color: white;
+  background-color: #f4fefb;
   border-radius: 9px;
   z-index: -1;
 }
