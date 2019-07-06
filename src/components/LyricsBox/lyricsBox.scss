@@ -1,9 +1,32 @@
 .lyrics-box {
   &-title {
+    position: relative;
     border-bottom: 1px solid #ebebeb;
     line-height: 2.5em;
   }
   &-text {
-    line-height: 2.5em;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  &-text-animation::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #36f284;
+    overflow: hidden;
+    width: 40%;
+    animation: run-text 3s infinite linear;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 1);
+  }
+
+  @keyframes run-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 }

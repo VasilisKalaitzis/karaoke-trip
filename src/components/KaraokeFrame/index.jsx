@@ -25,7 +25,12 @@ const KaraokeFrame = props => {
                 <span>{props.currentSong.error}</span>
               </div>
             ) : Object.entries(props.currentSong).length !== 0 ? (
-              <LyricsBox currentSong={props.currentSong} />
+              <LyricsBox
+                key={props.currentSong.artist + props.currentSong.title}
+                artist={props.currentSong.artist}
+                title={props.currentSong.title}
+                lyrics={props.currentSong.lyrics}
+              />
             ) : null}
           </div>
         </div>
