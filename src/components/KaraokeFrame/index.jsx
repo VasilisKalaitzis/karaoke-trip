@@ -27,6 +27,7 @@ const KaraokeFrame = props => {
                 </div>
               </div>
             ) : Object.entries(props.currentSong).length !== 0 ? (
+              // Display the lyrics if there's no errors and the lyrics are available
               <LyricsBox
                 key={props.currentSong.artist + props.currentSong.title}
                 artist={props.currentSong.artist}
@@ -53,6 +54,6 @@ export default connect(
 // Dependencies
 // components:
 //     SearchTemplate
-//     Sandbox
+//     LyricsBox
 // functions:
 //

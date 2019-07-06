@@ -13,11 +13,12 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_NEW_SONG:
       // fetch new song and also casched it
-
       let newSongHistory = state.songHistory;
       if (newSongHistory[action.payload.artist] === undefined) {
+        // when it is the first time that we search for this artist
         newSongHistory[action.payload.artist] = {};
       }
+
       newSongHistory[action.payload.artist][action.payload.title] =
         action.payload;
 

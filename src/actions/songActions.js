@@ -12,7 +12,7 @@ export const fetchSongLyrics = (artist, title) => (dispatch, getState) => {
   let lyricsUrl = window.env_config.lyricsUrl;
   let { songHistory } = getState().songReducer;
 
-  //pull from server only if the client doesn't have it
+  //pull from the server only if the client doesn't already have it in the cache
   if (
     songHistory[artist] !== undefined &&
     songHistory[artist][title] !== undefined
@@ -33,6 +33,7 @@ export const fetchSongLyrics = (artist, title) => (dispatch, getState) => {
         return response.json(); //we only get here if there is no error
       })
       .then(data => {
+        // fetch from the server and update the store
         dispatch({
           type: FETCH_NEW_SONG,
           payload: {
