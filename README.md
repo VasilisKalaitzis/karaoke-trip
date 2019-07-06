@@ -1,4 +1,36 @@
+This application was build with React & Redux. It allows the user to search for his favorite song and find the lyrics
+
+## Components
+
+### AppHeader
+
+The slim bar on the top of the screen
+
+### KaraokeFrame
+
+The main wrapper that contains the sub-application frame. This is the wrapper of 'SearchTemplate' and 'LyricsBox' components
+
+### LyricsBox
+
+This is the component responsible for displaying the lyrics
+
+### Searchbar
+
+A generic component. This has a callback that return the value to its father when the user is typing
+
+### SearchTemplate
+
+This is the component responsible for utilizing the user's input and updating the "songReducer"
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Setting up
+
+In the project directory, you should run:
+
+### `npm install`
+
+Then you have to turn the scss to css.
 
 ## Available Scripts
 
