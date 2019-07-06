@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,kBADc,CACd,aAAa,CAAC;EACZ,cAAc,EAAE,GAAG;CACpB",
+    "sources": [
+        "karaokeFrame.scss"
+    ],
+    "names": [],
+    "file": "karaokeFrame.css"
+}

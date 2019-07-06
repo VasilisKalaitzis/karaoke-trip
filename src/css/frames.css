@@ -1,0 +1,47 @@
+.fill-height {
+  height: 100%;
+}
+
+.back-button-font {
+  float: left;
+  cursor: pointer;
+}
+
+.sub-app {
+  z-index: 999;
+  position: relative;
+  margin: 20px;
+  border-radius: 9px;
+  -webkit-box-shadow: 0 13px 30px -19px #40514e;
+          box-shadow: 0 13px 30px -19px #40514e;
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+.sub-app-content {
+  height: 80vh;
+  padding: 20px 15px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.sub-app:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 5%;
+  width: 90%;
+  height: 100px;
+  opacity: 0.5;
+  background-color: white;
+  border-radius: 9px;
+  z-index: -1;
+}
+
+.scrollableCell {
+  height: "100%";
+  height: "auto";
+  overflow-y: "auto";
+}
+/*# sourceMappingURL=frames.css.map */
