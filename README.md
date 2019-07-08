@@ -1,5 +1,7 @@
 This application was build with React & Redux. It allows the user to search for his favorite song and find the lyrics
 
+Demo URL: http://karaoke-trip.bill.develop.c-137.live/songLyrics
+
 ## Components
 
 ### AppHeader
