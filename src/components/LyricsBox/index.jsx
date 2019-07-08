@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // css
-import "./lyricsBox.css";
+import "./lyricsBox.scss";
 
 const LyricsBox = props => {
   // which line from the lyrics to display
@@ -10,8 +10,6 @@ const LyricsBox = props => {
   // array with the lyrics splitted into lines
   const [lyricsArray, setLyricsArray] = useState([]);
 
-  let scopedLyricsArray = [];
-  let scopedLineIndex = 0;
   // we need to reference the lyrics' element in order to restart the animation
   let animatedField = null;
 
@@ -27,15 +25,12 @@ const LyricsBox = props => {
 
   // helper function to change song
   const newSongInitialize = () => {
-    scopedLineIndex = 0;
-    scopedLyricsArray = splitStringIntoLines(props.lyrics);
+    setLineIndex(0);
+    setLyricsArray(splitStringIntoLines(props.lyrics));
     // edge case when the song doesn't have lyrics
-    if (scopedLyricsArray === null) {
-      scopedLyricsArray = [];
+    if (lyricsArray === null) {
+      setLyricsArray([]);
     }
-
-    setLineIndex(scopedLineIndex);
-    setLyricsArray(scopedLyricsArray);
 
     // restart the animation
     animatedField.classList.remove("lyrics-box-text-animation");
@@ -44,9 +39,8 @@ const LyricsBox = props => {
 
   // retrieve the next line of the song
   const getNextLine = () => {
-    if (scopedLyricsArray.length - 1 > scopedLineIndex) {
-      scopedLineIndex++;
-      setLineIndex(scopedLineIndex);
+    if (lyricsArray.length - 1 > lineIndex) {
+      setLineIndex(lineIndex + 1);
     }
   };
 

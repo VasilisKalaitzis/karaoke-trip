@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 
 // css
-import "./searchbar.css";
+import "./searchbar.scss";
 
 const Searchbar = props => {
   const { callBack } = props;

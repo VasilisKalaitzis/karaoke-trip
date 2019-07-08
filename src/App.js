@@ -6,11 +6,11 @@ import AppHeader from "./components/AppHeader";
 
 // css
 
-import "./css/App.css";
-import "./css/containers.css";
-import "./css/colors.css";
-import "./css/frames.css";
-import "./css/elements.css";
+import "./css/App.scss";
+import "./css/containers.scss";
+import "./css/colors.scss";
+import "./css/frames.scss";
+import "./css/elements.scss";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMusic, faUsers } from "@fortawesome/free-solid-svg-icons";

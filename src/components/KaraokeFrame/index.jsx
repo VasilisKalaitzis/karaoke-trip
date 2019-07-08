@@ -10,7 +10,7 @@ import SearchTemplate from "../SearchTemplate";
 import LyricsBox from "../LyricsBox";
 
 // css
-import "./karaokeFrame.css";
+import "./karaokeFrame.scss";
 
 const KaraokeFrame = props => {
   return (
