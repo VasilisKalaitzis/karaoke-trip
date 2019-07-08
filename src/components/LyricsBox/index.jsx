@@ -16,12 +16,14 @@ const LyricsBox = props => {
   useEffect(() => {
     // Component Did Update
     newSongInitialize();
-    // the interval's job is to pull the next line of the lyrics
-    const interval = setInterval(getNextLine, 3000);
-
-    // Component Will Unmount
-    return () => clearInterval(interval);
   }, [props.artist, props.title]);
+
+  useEffect(() => {
+    // the interval's job is to pull the next line of the lyrics
+    const interval = setTimeout(getNextLine, 3000);
+    // Component Will Unmount
+    return () => clearTimeout(interval);
+  }, [lineIndex, lyricsArray]);
 
   // helper function to change song
   const newSongInitialize = () => {
