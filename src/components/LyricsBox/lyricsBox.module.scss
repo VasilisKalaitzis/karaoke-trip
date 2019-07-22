@@ -1,14 +1,14 @@
-.lyrics-box {
-  &-title {
+.lyricsBox {
+  &Title {
     position: relative;
     border-bottom: 1px solid #ebebeb;
     line-height: 2.5em;
   }
-  &-text {
+  &Text {
     position: relative;
   }
 
-  &-text-animation::after {
+  &TextAnimation::after {
     content: attr(data-text);
     position: absolute;
     left: 0;
@@ -17,10 +17,10 @@
     overflow: hidden;
     white-space: nowrap;
     width: 40%;
-    animation: run-text 3s infinite linear;
+    animation: runText 3s infinite linear;
   }
 
-  @keyframes run-text {
+  @keyframes runText {
     from {
       width: 0;
     }

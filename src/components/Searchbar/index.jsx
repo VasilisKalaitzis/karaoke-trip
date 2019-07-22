@@ -3,15 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 
 // css
-import "./searchbar.scss";
+import styles from "./Searchbar.module.scss";
 
 const Searchbar = props => {
   const { callBack } = props;
 
   return (
-    <div className="beau-searchbar">
-      <div className="beau-searchbar-body color-pallete4 shadow-pallete1">
-        <button className="btn-search" type="button">
+    <div className={styles.beauSearchbar}>
+      <div
+        className={styles.beauSearchbarBody + " color-pallete4 shadow-pallete1"}
+      >
+        <button className={styles.btnSearch} type="button">
           <FontAwesomeIcon className="normal-fa-fonts" icon={props.icon} />
         </button>
         <input

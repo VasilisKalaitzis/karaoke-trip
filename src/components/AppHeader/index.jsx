@@ -3,10 +3,14 @@ import React from "react";
 // libraries
 
 // css
-import "./appHeader.scss";
+import styles from "./appHeader.module.scss";
 
 const AppHeader = props => {
-  return <div className="header-container color-pallete1">{props.title}</div>;
+  return (
+    <div className={styles.headerContainer + " color-pallete1"}>
+      {props.title}
+    </div>
+  );
 };
 
 export default AppHeader;

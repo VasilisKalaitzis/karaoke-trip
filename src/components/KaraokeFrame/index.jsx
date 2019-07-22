@@ -10,11 +10,11 @@ import SearchTemplate from "../SearchTemplate";
 import LyricsBox from "../LyricsBox";
 
 // css
-import "./karaokeFrame.scss";
+import styles from "./karaokeFrame.module.scss";
 
 const KaraokeFrame = props => {
   return (
-    <div className="karaoke-container flexcontainer">
+    <div className={styles.karaokeContainer + " flexcontainer"}>
       <div className="flexcontainer-block xs-12 md-6">
         <div className="sub-app color-pallete2">
           <div className="sub-app-content">

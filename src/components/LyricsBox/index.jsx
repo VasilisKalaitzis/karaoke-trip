@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // css
-import "./lyricsBox.scss";
+import styles from "./lyricsBox.module.scss";
 
 const LyricsBox = props => {
   // which line from the lyrics to display
@@ -16,13 +16,17 @@ const LyricsBox = props => {
   useEffect(() => {
     // Component Did Update
     newSongInitialize();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.artist, props.title]);
 
   useEffect(() => {
     // the interval's job is to pull the next line of the lyrics
     const interval = setTimeout(getNextLine, 3000);
     // Component Will Unmount
-    return () => clearTimeout(interval);
+    return () => {
+      clearTimeout(interval);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lineIndex, lyricsArray]);
 
   // helper function to change song
@@ -35,8 +39,8 @@ const LyricsBox = props => {
     }
 
     // restart the animation
-    animatedField.classList.remove("lyrics-box-text-animation");
-    animatedField.classList.add("lyrics-box-text-animation");
+    animatedField.classList.remove(styles.lyricsBoxTextAnimation);
+    animatedField.classList.add(styles.lyricsBoxTextAnimation);
   };
 
   // retrieve the next line of the song
@@ -53,15 +57,15 @@ const LyricsBox = props => {
 
   return (
     <div className="flexcontainer">
-      <div className="flexcontainer-block xs-12 lyrics-box">
+      <div className=" flexcontainer-block xs-12">
         {/* Artist Name */}
-        <span className="lyrics-box-title">{props.artist}</span>
+        <span className={styles.lyricsBoxTitle}>{props.artist}</span>
       </div>
       {/* Lyrics */}
       <div className="flexcontainer-block xs-12 align-items-left">
-        <div className="lyrics-box-text-animation">
+        <div className={styles.lyricsBoxTextAnimation}>
           <span
-            className="lyrics-box-text "
+            className={styles.lyricsBoxText}
             data-text={lyricsArray[lineIndex]}
             ref={lyricsField => {
               animatedField = lyricsField;
