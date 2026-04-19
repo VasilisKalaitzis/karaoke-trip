@@ -8,7 +8,8 @@ import KaraokeFrame from "../components/KaraokeFrame/index";
 const Routes = () => (
   <main>
     <Switch>
-      <Route path="/songLyrics" component={KaraokeFrame} />
+      <Route exact path="/" component={KaraokeFrame} />
+      <Route exact path="/songLyrics" component={KaraokeFrame} />
       {/* Tech Debt - Complete the functionality here */}
       <Route
         path="/songLyrics/:songArtist/:songTitle"
